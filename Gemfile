@@ -70,3 +70,9 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "noticed", "~> 1.6"
+
+gem "devise", "~> 4.8"
+
+gem "pry", "~> 0.14.1"
