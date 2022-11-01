@@ -1,8 +1,5 @@
 <h1>Notifications</h1>
-<% @notifications.each do |notification| %>
-      <p>Title: <%= link_to notification.params[:post].title, post_path(notification.params[:post].id) %></p>
-      <p>Received At: <%= notification.params[:post].created_at.to_date %></p>
-      <p>Status: <%= notification.read? ? "Read" : "Unread" %></p>
-      <hr/>
+<%= turbo_stream_from "notifications" %>
+<%= turbo_frame_tag "notifications" do %>
+    <%= render @notifications %>
 <% end %>
-
