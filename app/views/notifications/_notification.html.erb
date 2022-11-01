@@ -1,0 +1,12 @@
+<p>
+    ID:
+    <%= notification.id %>
+</p>
+<p>Title:
+    <%= link_to notification.params[:post].title, post_path(notification.params[:post].id) %></p>
+<p>Received At:
+    <%= notification.params[:post].created_at.to_date %></p>
+<p>Status:
+    <%= notification.read? ? "Read" : link_to("Mark as Read", mark_read_notification_path(notification)) %>
+</p>
+<hr/>

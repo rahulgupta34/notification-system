@@ -1,0 +1,5 @@
+<h1>Notifications</h1>
+<%= turbo_stream_from "notifications" %>
+<%= turbo_frame_tag "notifications" do %>
+    <%= render @notifications %>
+<% end %>

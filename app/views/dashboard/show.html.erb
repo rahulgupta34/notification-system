@@ -1,0 +1,12 @@
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<h1>Dashboard</h1>
+<% if current_user.present? %>
+    <%= link_to "sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
+     |  <%= link_to "posts", posts_path %>
+     <br>
+     <%= turbo_stream_from "notifications" %>
+     <%= turbo_frame_tag "notifications", src: notifications_path %>
+<% else%>
+    <%= link_to "sign in", new_user_session_path %>
+<% end %>
